@@ -36,16 +36,23 @@
 
 ## Usage
 
-1. Clone this repository locally
-2. Open the app's settings
-3. Select `import theme` and browse to where you cloned Catppuccin
-4. Select it
+1. Download the patch file for the colorscheme you want from the patches folder
+2. Copy the patch to your sent source folder
+3. Run `git apply colorscheme.patch` (replace colorscheme with the colorscheme's name)
+4. Delete config.h
+5. Rebuild
 
 <!-- this section is optional -->
 ## 🙋 FAQ
 
--	Q: **_"Where can I find the doc?"_**\
-	A: Run `:help theme`
+-	Q: **_"I'm getting an error about the patch failing."_**\
+	A: Open `config.def.h` and make sure the following is set.
+	```
+	static const char *colors[] = {
+          "#4c4f69", /* foreground color */
+          "#eff1f5", /* background color */
+ 	};
+ 	```
 
 ## 💝 Thanks to
 
