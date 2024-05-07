@@ -3,6 +3,7 @@ whiskers:
  version: "2.1.0"
  matrix:
   - flavor
+  - accent
  filename: 'patches/{{ flavor.identifier }}-{{ accent }}.patch'
 ---
 
@@ -18,7 +19,7 @@ index 60eb376..835825a 100644
  static const char *colors[] = {
 -  "#000000", /* foreground color */
 -  "#FFFFFF", /* background color */
-+  "#{{ palette.accent.hex }}", /* foreground color */
++  "#{{ palette[accent].hex }}", /* foreground color */
 +  "#{{ palette.base.hex }}", /* background color */
  };
  
