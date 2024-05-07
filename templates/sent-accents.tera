@@ -1,0 +1,25 @@
+---
+whiskers:
+ version: "2.1.0"
+ matrix:
+  - flavor
+ filename: 'patches/{{ flavor.identifier }}-{{ accent }}.patch'
+---
+
+{%- set palette = flavor.colors -%}
+
+diff --git a/config.def.h b/config.def.h
+index 60eb376..835825a 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -9,8 +9,8 @@ static char *fontfallbacks[] = {
+ #define FONTSZ(x) ((int)(10.0 * powf(1.1288, (x)))) /* x in [0, NUMFONTSCALES-1] */
+ 
+ static const char *colors[] = {
+-  "#000000", /* foreground color */
+-  "#FFFFFF", /* background color */
++  "#{{ palette.accent.hex }}", /* foreground color */
++  "#{{ palette.base.hex }}", /* background color */
+ };
+ 
+ static const float linespacing = 1.4;
